@@ -1,0 +1,11 @@
+{
+  "id": "10_dedupe",
+  "issue": "`dedupe` removes duplicates but scrambles the order; the first occurrence of each item should keep its position.",
+  "module": "ordering.py",
+  "visible_test": "tests/test_ordering.py",
+  "fix": {
+    "path": "ordering.py",
+    "old": "    return list(set(items))\n",
+    "new": "    return list(dict.fromkeys(items))\n"
+  }
+}

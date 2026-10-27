@@ -1,0 +1,11 @@
+{
+  "id": "02_median",
+  "issue": "`median` returns the upper middle value for lists of even length; the median of [1, 2, 3, 4] should be 2.5.",
+  "module": "stats.py",
+  "visible_test": "tests/test_stats.py",
+  "fix": {
+    "path": "stats.py",
+    "old": "    return ordered[len(ordered) // 2]\n",
+    "new": "    mid = len(ordered) // 2\n    if len(ordered) % 2 == 0:\n        return (ordered[mid - 1] + ordered[mid]) / 2\n    return ordered[mid]\n"
+  }
+}

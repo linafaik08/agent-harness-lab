@@ -1,0 +1,11 @@
+{
+  "id": "04_chunked",
+  "issue": "`chunked` silently drops the last, shorter chunk: chunked([1, 2, 3, 4, 5], 2) loses the 5.",
+  "module": "batching.py",
+  "visible_test": "tests/test_batching.py",
+  "fix": {
+    "path": "batching.py",
+    "old": "    for start in range(0, len(items) - size + 1, size):\n",
+    "new": "    for start in range(0, len(items), size):\n"
+  }
+}

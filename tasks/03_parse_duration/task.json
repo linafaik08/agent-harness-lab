@@ -1,0 +1,11 @@
+{
+  "id": "03_parse_duration",
+  "issue": "`parse_duration(\"1h30m\")` returns 3780 seconds instead of 5400; minutes are converted with the wrong factor.",
+  "module": "durations.py",
+  "visible_test": "tests/test_durations.py",
+  "fix": {
+    "path": "durations.py",
+    "old": "UNITS = {\"h\": 3600, \"m\": 6, \"s\": 1}\n",
+    "new": "UNITS = {\"h\": 3600, \"m\": 60, \"s\": 1}\n"
+  }
+}

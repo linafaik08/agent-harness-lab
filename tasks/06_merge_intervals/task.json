@@ -1,0 +1,11 @@
+{
+  "id": "06_merge_intervals",
+  "issue": "`merge_intervals` only merges neighbours when the input is already sorted; [(5, 7), (1, 3), (2, 4)] should give [(1, 4), (5, 7)].",
+  "module": "intervals.py",
+  "visible_test": "tests/test_intervals.py",
+  "fix": {
+    "path": "intervals.py",
+    "old": "    for start, end in intervals:\n",
+    "new": "    for start, end in sorted(intervals):\n"
+  }
+}

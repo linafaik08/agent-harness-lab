@@ -1,0 +1,11 @@
+{
+  "id": "05_word_count",
+  "issue": "`word_count` treats \"The\" and \"the\" as different words; counting should ignore case.",
+  "module": "counting.py",
+  "visible_test": "tests/test_counting.py",
+  "fix": {
+    "path": "counting.py",
+    "old": "    return Counter(re.findall(r\"[A-Za-z']+\", text))\n",
+    "new": "    return Counter(re.findall(r\"[a-z']+\", text.lower()))\n"
+  }
+}

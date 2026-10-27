@@ -1,0 +1,11 @@
+{
+  "id": "07_roman",
+  "issue": "`roman_to_int(\"IV\")` returns 6 instead of 4; subtractive notation is not handled.",
+  "module": "roman.py",
+  "visible_test": "tests/test_roman.py",
+  "fix": {
+    "path": "roman.py",
+    "old": "    return sum(VALUES[ch] for ch in numeral)\n",
+    "new": "    total = 0\n    for i, ch in enumerate(numeral):\n        value = VALUES[ch]\n        if i + 1 < len(numeral) and VALUES[numeral[i + 1]] > value:\n            total -= value\n        else:\n            total += value\n    return total\n"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "01_slugify",
+  "issue": "`slugify` leaves repeated and trailing hyphens in the slug, so \"Hello, World!\" becomes \"hello--world-\" instead of \"hello-world\".",
+  "module": "text_utils.py",
+  "visible_test": "tests/test_text_utils.py",
+  "fix": {
+    "path": "text_utils.py",
+    "old": "    slug = re.sub(r\"[^a-z0-9]\", \"-\", title.lower())\n",
+    "new": "    slug = re.sub(r\"[^a-z0-9]+\", \"-\", title.lower()).strip(\"-\")\n"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "09_moving_average",
+  "issue": "`moving_average` omits the final window: moving_average([1, 2, 3, 4], 2) should be [1.5, 2.5, 3.5].",
+  "module": "series.py",
+  "visible_test": "tests/test_series.py",
+  "fix": {
+    "path": "series.py",
+    "old": "    for end in range(window, len(values)):\n",
+    "new": "    for end in range(window, len(values) + 1):\n"
+  }
+}

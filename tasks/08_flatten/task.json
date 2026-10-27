@@ -1,0 +1,11 @@
+{
+  "id": "08_flatten",
+  "issue": "`flatten` only removes one level of nesting; flatten([1, [2, [3, 4]]]) should return [1, 2, 3, 4].",
+  "module": "nesting.py",
+  "visible_test": "tests/test_nesting.py",
+  "fix": {
+    "path": "nesting.py",
+    "old": "            flat.extend(item)\n",
+    "new": "            flat.extend(flatten(item))\n"
+  }
+}
